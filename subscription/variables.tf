@@ -1,5 +1,5 @@
 variable "additional_details" {
-  description = "Additional details that are specific for this subscription such as activation details."
+  description = "(Optional) Additional details that are specific for this subscription such as activation details."
   type = list(object({
     key   = string
     value = string
@@ -8,58 +8,58 @@ variable "additional_details" {
 }
 
 variable "compartment_id" {
-  description = "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the subscription in."
+  description = "(Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the subscription in."
   type        = string
 }
 
 variable "defined_tags" {
-  description = "Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`"
+  description = "(Optional) (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`"
   type        = map(string)
   default     = null
 }
 
 variable "display_name" {
-  description = "The subscription name. Must be unique within the compartment. This value can be updated."
+  description = "(Optional) (Updatable) The subscription name. Must be unique within the compartment. This value can be updated."
   type        = string
   default     = null
 }
 
 variable "freeform_tags" {
-  description = "Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`"
+  description = "(Optional) (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`"
   type        = map(string)
   default     = {}
 }
 
 variable "product_id" {
-  description = "The unique identifier of the marketplace listing in Oracle Cloud Infrastructure."
+  description = "(Required) The unique identifier of the marketplace listing in Oracle Cloud Infrastructure."
   type        = string
 }
 
 variable "realm" {
-  description = "The realm from where customer is buying the subscription."
+  description = "(Optional) The realm from where customer is buying the subscription."
   type        = string
   default     = null
 }
 
 variable "region" {
-  description = "The region from where customer is buying the subscription."
+  description = "(Optional) The region from where customer is buying the subscription."
   type        = string
   default     = null
 }
 
 variable "seller_id" {
-  description = "The OCID for the seller in SELF Service."
+  description = "(Required) The OCID for the seller in SELF Service."
   type        = string
 }
 
 variable "source_type" {
-  description = "The type of seller in SELF Service."
+  description = "(Optional) The type of seller in SELF Service."
   type        = string
   default     = null
 }
 
 variable "subscription_details" {
-  description = "The details of a subscription"
+  description = "(Required) The details of a subscription"
   type = object({
     amount                   = optional(number)
     currency                 = optional(string)
@@ -94,6 +94,6 @@ variable "subscription_details" {
 }
 
 variable "tenant_id" {
-  description = "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in."
+  description = "(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant to create the subscription in."
   type        = string
 }
